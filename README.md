@@ -3,6 +3,7 @@
 Sample code created with Cocos Creator 3.6.2
 
 Steps to get it working:
+
 0. Download and install Cocos Creator 3.6.2 or higher.
 1. Clone this repo to a folder on your machine.
 2. Start the Cocos Dashboard.
