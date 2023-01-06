@@ -12,6 +12,6 @@ jobs:
         with:
           cocos_version: 3.6.2
           platform: web-desktop
-          project-path: .
+          project_path: .
 
   
