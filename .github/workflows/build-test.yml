@@ -11,6 +11,7 @@ jobs:
         uses: miggene/cocos-build@v1.2.3
         with:
           cocos_version: 3.6.2
-          platform-build: web-desktop
+          platform: web-desktop
+          project-path: .
 
   
