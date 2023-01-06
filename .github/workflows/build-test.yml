@@ -1,0 +1,16 @@
+
+name: Cocos Creator build and test
+on: [push, pull_request]
+
+jobs:
+  build-test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cocos Creator Build
+        uses: miggene/cocos-build@v1.2.3
+        with:
+          cocos_version: 3.6.2
+          platform-build: web-desktop
+
+  
