@@ -12,8 +12,8 @@ jobs:
         with:
           cocos_version: 3.6.2
           platform: web-desktop
-          project_path: ${{ github.workspace }}
-          build_path: ${{ github.workspace }}/build
+          project_path: "${{ github.workspace }}"
+          build_path: "${{ github.workspace }}/build"
 
 
   
