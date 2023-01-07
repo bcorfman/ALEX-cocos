@@ -14,4 +14,4 @@ jobs:
           wget -q -O CocosCreator_V3.6.2.zip https://download.cocos.com/CocosCreator/v3.6.2/CocosCreator-v3.6.2-mac-102813.zip 
           /usr/bin/unzip -o -q CocosCreator_V3.6.2.zip
           /usr/bin/open ./CocosCreator.app
-          /Users/runner/work/Alex2D/Alex2D/CocosCreator.app/Contents/MacOS/CocosCreator --path /Users/runner/work/Alex2D/Alex2D --build platform=web-desktop;buildPath=/Users/runner/work/Alex2D/Alex2D/build  
+          /Users/runner/work/Alex2D/Alex2D/CocosCreator.app/Contents/MacOS/CocosCreator --project "/Users/runner/work/Alex2D/Alex2D" --build "platform=web-desktop;debug=true"  
