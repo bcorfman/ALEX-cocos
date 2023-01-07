@@ -12,4 +12,6 @@ jobs:
           curl -o CocosCreator_V3.6.2.zip https://download.cocos.com/CocosCreator/v3.6.2/CocosCreator-v3.6.2-mac-102813.zip 
           /usr/bin/unzip -o -q CocosCreator_V3.6.2.zip
           /usr/bin/open ./CocosCreator.app
+          trap 0 36  # trap return code 36 as a success (because it is according to Cocos docs)
           /Users/runner/work/Alex2D/Alex2D/CocosCreator.app/Contents/MacOS/CocosCreator --project "/Users/runner/work/Alex2D/Alex2D" --build "platform=web-mobile;debug=true"  
+          trap - 36  # back to normal
