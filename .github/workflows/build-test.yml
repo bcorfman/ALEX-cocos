@@ -8,12 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Cocos Creator Build
-        uses: miggene/cocos-build@v1.2.3
-        with:
-          cocos_version: 3.6.2
-          platform: web-desktop
-          project_path: "${{ github.workspace }}"
-          build_path: "${{ github.workspace }}/build"
-
-
-  
+        run: |
+          /usr/bin/unzip -o -q CocosCreator_V3.6.2.zip
+          /usr/bin/open ./CocosCreator.app
+          /Users/runner/work/Alex2D/Alex2D/CocosCreator.app/Contents/MacOS/CocosCreator --path /Users/runner/work/Alex2D/Alex2D --build platform=web-desktop;buildPath=/Users/runner/work/Alex2D/Alex2D/build  
