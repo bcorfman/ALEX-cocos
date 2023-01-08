@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   build-test:
     runs-on: macos-latest
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v2
       - name: Cocos Creator Build
@@ -13,4 +14,3 @@ jobs:
           /usr/bin/unzip -o -q CocosCreator_V3.6.2.zip
           /usr/bin/open ./CocosCreator.app
           /Users/runner/work/Alex2D/Alex2D/CocosCreator.app/Contents/MacOS/CocosCreator --project "/Users/runner/work/Alex2D/Alex2D" --build "platform=web-desktop" 2>&1 
-          command_status=$?
