@@ -3,9 +3,8 @@ name: Cocos Creator build and test
 on: [push, pull_request]
 
 jobs:
-  build-test:
+  build-deploy:
     runs-on: macos-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v2
       - name: Cocos Creator Build
@@ -13,7 +12,8 @@ jobs:
           curl -o CocosCreator_V3.6.2.zip https://download.cocos.com/CocosCreator/v3.6.2/CocosCreator-v3.6.2-mac-102813.zip 
           /usr/bin/unzip -o -q CocosCreator_V3.6.2.zip
           /usr/bin/open ./CocosCreator.app
-          ./CocosCreator.app/Contents/MacOS/CocosCreator --project "." --build "platform=web-mobile" 2>&1 
+          chmod 755 build.sh
+          ./build.sh 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
