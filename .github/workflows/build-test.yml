@@ -13,4 +13,10 @@ jobs:
           curl -o CocosCreator_V3.6.2.zip https://download.cocos.com/CocosCreator/v3.6.2/CocosCreator-v3.6.2-mac-102813.zip 
           /usr/bin/unzip -o -q CocosCreator_V3.6.2.zip
           /usr/bin/open ./CocosCreator.app
-          /Users/runner/work/Alex2D/Alex2D/CocosCreator.app/Contents/MacOS/CocosCreator --project "/Users/runner/work/Alex2D/Alex2D" --build "platform=web-desktop" 2>&1 
+          /Users/runner/work/Alex2D/Alex2D/CocosCreator.app/Contents/MacOS/CocosCreator --project "/Users/runner/work/Alex2D/Alex2D" --build "platform=web-mobile" 2>&1 
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web-mobile
+          destination_dir: docs
