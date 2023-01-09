@@ -15,8 +15,11 @@ jobs:
           chmod 755 build.sh
           ./build.sh 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3.7.3
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/web-mobile
-          destination_dir: docs 
+          target_branch: gh-pages
+          build_dir: build/web-mobile
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
