@@ -1,0 +1,25 @@
+
+name: Cocos Creator build and test
+on: [push, pull_request]
+
+jobs:
+  build-deploy:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cocos Creator Build
+        run: |
+          curl -o CocosCreator_V3.6.2.zip https://download.cocos.com/CocosCreator/v3.6.2/CocosCreator-v3.6.2-mac-102813.zip 
+          /usr/bin/unzip -o -q CocosCreator_V3.6.2.zip
+          /usr/bin/open ./CocosCreator.app
+          chmod 755 build.sh
+          ./build.sh 
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: build/web-desktop
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
